@@ -1,6 +1,6 @@
 {
   "name": "article-to-avatar-video",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Codex Skill that turns Chinese long-form content into visually directed, release-gated avatar videos.",
   "type": "module",
   "scripts": {

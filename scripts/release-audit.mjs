@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 const allowPlaceholders = process.argv.includes('--allow-placeholders');
@@ -33,7 +34,6 @@ const requiredFiles = [
   'docs/faq.md',
   'docs/demo-video-script.md',
   'examples/knowledge-video/article.md',
-  'examples/knowledge-video/avatar-video.config.json',
   'examples/knowledge-video/content-brief.json',
   'examples/knowledge-video/scene-plan.json',
   'examples/knowledge-video/kanvis-cut.config.json',
@@ -93,6 +93,17 @@ const warnings = [];
 for (const file of requiredFiles) {
   if (!fs.existsSync(path.join(root, file))) {
     errors.push(`required file missing: ${file}`);
+  }
+}
+
+if (fs.existsSync(path.join(root, '.git'))) {
+  for (const file of requiredFiles) {
+    const tracked = spawnSync('git', ['ls-files', '--error-unmatch', file], {
+      cwd: root,
+      encoding: 'utf8',
+      windowsHide: true
+    });
+    if (tracked.status !== 0) errors.push(`required file is not tracked by git: ${file}`);
   }
 }
 

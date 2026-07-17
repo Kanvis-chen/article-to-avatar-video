@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1
+
+### Fixed
+
+- CI no longer depends on a local `avatar-video.config.json` that is intentionally excluded by `.gitignore`.
+- Public release audit now verifies that every required release file is tracked by Git when run inside a repository.
+
 ## Unreleased
 
 ### Added

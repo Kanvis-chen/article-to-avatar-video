@@ -40,10 +40,15 @@ test('privacy-safe example passes preflight and scene validation', () => {
 test('paid preflight refuses a config with paid calls disabled', () => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'article-avatar-paid-'));
   try {
-    const source = JSON.parse(fs.readFileSync(path.join(root, 'examples/knowledge-video/avatar-video.config.json')));
+    const source = JSON.parse(fs.readFileSync(path.join(root, 'assets/avatar-video.config.example.json')));
     source.runtime.mode = 'cloud';
     source.avatar.provider = 'heygen';
+    source.avatar.avatar_id = 'authorized-test-avatar';
+    source.avatar.consent_confirmed = true;
     source.voice.provider = 'heygen';
+    source.voice.voice_id = 'authorized-test-voice';
+    source.voice.consent_confirmed = true;
+    source.cost.paid_calls = 'off';
     const config = path.join(temp, 'config.json');
     fs.writeFileSync(config, JSON.stringify(source));
     const result = runNode('scripts/preflight.mjs', [
