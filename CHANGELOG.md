@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.2.0
+
+### Added
+
+- Complete MIT-licensed Kanvis Video Workbench source under `workbench/`.
+- Visual canvas with draggable and resizable editable layers.
+- Multi-track timeline with seek, trim, split, delete, and selection.
+- Layer inspector for text, geometry, visibility, opacity, timing, and locking.
+- Live HyperFrames preview, rendered playback, revision history, undo, and redo.
+- Local project server, render jobs, Codex client, and MCP embedded-app integration.
+- Privacy-safe editable fixture and verified workbench screenshot.
+- Dedicated workbench CI for typecheck, tests, and production build.
+
+### Changed
+
+- The editor opens as the default workbench view.
+- Public documentation now describes the workbench as fully open source.
+- Removed course, pricing, one-to-one, and commercial upgrade surfaces from the UI and public documentation.
+
 ## 0.1.1
 
 ### Fixed

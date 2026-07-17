@@ -1,11 +1,11 @@
 {
   "name": "article-to-avatar-video",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A Codex Skill that turns Chinese long-form content into visually directed, release-gated avatar videos.",
   "type": "module",
   "scripts": {
-    "test": "node --test",
-    "check": "node --test && node scripts/validate-skill.mjs && node scripts/preflight.mjs --article examples/knowledge-video/article.md --config examples/knowledge-video/kanvis-cut.config.json && node scripts/detect-runtime.mjs --config examples/knowledge-video/kanvis-cut.config.json && node scripts/validate-scene-plan.mjs examples/knowledge-video/scene-plan.json",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test && node scripts/validate-skill.mjs && node scripts/preflight.mjs --article examples/knowledge-video/article.md --config examples/knowledge-video/kanvis-cut.config.json && node scripts/detect-runtime.mjs --config examples/knowledge-video/kanvis-cut.config.json && node scripts/validate-scene-plan.mjs examples/knowledge-video/scene-plan.json",
     "runtime:detect": "node scripts/detect-runtime.mjs",
     "release:audit": "node scripts/release-audit.mjs",
     "release:audit:local": "node scripts/release-audit.mjs --allow-placeholders",

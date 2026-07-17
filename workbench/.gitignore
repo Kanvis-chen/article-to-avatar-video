@@ -1,0 +1,16 @@
+node_modules/
+dist/
+release/
+.vite/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.visualhyper/
+visualhyper.project.json
+visualhyper.project.json.*.tmp
+packages/codex-client/generated/
+packages/ui/public/runtime-config.json
+*.log
+.DS_Store
+Thumbs.db

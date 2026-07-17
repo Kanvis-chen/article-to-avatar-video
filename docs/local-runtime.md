@@ -29,11 +29,9 @@ These are routing defaults, not performance guarantees. Model versions, resoluti
 4. Insufficient hardware falls back to cloud only when `allow_cloud_fallback` is true.
 5. Otherwise it selects `mock`, preserving project generation without creating a paid call.
 
-## Commercial boundary
+## Optional convenience tooling
 
-The open repository includes detection, reference adapters, configuration, and fallback behavior.
-
-A paid product may provide:
+The open repository includes detection, reference adapters, configuration, fallback behavior, and the visual workbench. Additional distributions may provide:
 
 - one-click Windows installation;
 - model download and integrity checks;
@@ -42,4 +40,3 @@ A paid product may provide:
 - background queues;
 - managed cloud compute;
 - remote installation and support.
-

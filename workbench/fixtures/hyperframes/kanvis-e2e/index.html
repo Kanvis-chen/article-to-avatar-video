@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN" data-composition-variables='[{"id":"title","type":"string","label":"主标题","default":"让想法，被看见。","maxLength":40},{"id":"captions","type":"boolean","label":"显示字幕","default":true},{"id":"pace","type":"number","label":"动画节奏","default":1,"min":0.7,"max":1.4,"step":0.1},{"id":"style","type":"enum","label":"视觉风格","default":"mint","options":[{"value":"mint","label":"薄荷编辑风"},{"value":"mono","label":"极简黑白"}]}]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360, height=640" />
+    <title>Kanvis E2E Composition</title>
+    <style>
+      @font-face { font-family: "Microsoft YaHei"; src: local("Microsoft YaHei"); }
+      html, body { width: 360px; height: 640px; margin: 0; overflow: hidden; background: #07110f; color: #f5f7f8; font-family: Arial, "Microsoft YaHei", sans-serif; }
+      #kanvis-e2e { position: relative; width: 360px; height: 640px; overflow: hidden; }
+      .clip { position: absolute; inset: 0; display: grid; align-content: center; padding: 38px; box-sizing: border-box; }
+      .fill { position: absolute; inset: 0; background: radial-gradient(circle at 15% 30%, #145b4f, transparent 38%), linear-gradient(150deg, #0b1715, #07090d 62%, #241b45); }
+      .eyebrow { position: relative; display: block; width: max-content; margin-bottom: 18px; padding: 6px 9px; border: 1px solid rgba(62, 226, 196, .42); border-radius: 6px; color: #3ee2c4; font-size: 11px; letter-spacing: .12em; animation: rise .55s both ease-out; }
+      h1 { position: relative; width: 280px; margin: 0; font-size: 43px; line-height: 1.08; letter-spacing: -.05em; animation: rise .7s .08s both ease-out; }
+      p { position: relative; width: 250px; margin: 20px 0 0; color: #aab3b0; font-size: 14px; line-height: 1.55; animation: rise .7s .18s both ease-out; }
+      .brand { position: absolute; left: 38px; bottom: 35px; color: #3ee2c4; font-size: 12px; letter-spacing: .16em; }
+      @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+  </head>
+  <body>
+    <div id="kanvis-e2e" data-composition-id="main" data-start="0" data-width="360" data-height="640" data-duration="3" data-no-timeline>
+      <section id="kanvis-e2e-title" class="clip" data-start="0" data-duration="3" data-track-index="1">
+        <div class="fill"></div>
+        <span class="eyebrow">KANVIS E2E</span>
+        <h1>让想法，被看见。</h1>
+        <p>从文字、数字人或真人素材开始，生成可调整的视频项目。</p>
+        <span class="brand">KANVIS</span>
+      </section>
+    </div>
+    <script>
+      const variables = window.__hyperframes?.getVariables?.() ?? { title: "让想法，被看见。", captions: true, pace: 1, style: "mint" };
+      document.querySelector("h1").textContent = variables.title;
+      document.querySelector("p").style.opacity = variables.captions ? "1" : "0";
+      document.documentElement.style.setProperty("--pace", String(variables.pace));
+      if (variables.style === "mono") {
+        document.querySelector(".fill").style.background = "linear-gradient(150deg, #202020, #050505)";
+        document.documentElement.style.filter = "grayscale(1)";
+      }
+      for (const element of document.querySelectorAll(".eyebrow, h1, p")) {
+        const duration = Number.parseFloat(getComputedStyle(element).animationDuration);
+        element.style.animationDuration = `${duration / variables.pace}s`;
+      }
+    </script>
+  </body>
+</html>

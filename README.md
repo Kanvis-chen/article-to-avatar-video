@@ -6,7 +6,7 @@
 
 一个面向 Codex 的中文长文视频化 Skill：从原文保真、口播改写和语义分镜，到真人增强、无人出镜、数字分身、信息图、字幕、音频、渲染与发布门禁。
 
-当前版本：`v0.1.0`
+当前版本：`v0.2.0`
 
 ## 它解决什么问题
 
@@ -98,18 +98,23 @@ flowchart LR
 
 具体的声音、数字人和渲染动作由当前 Codex 环境中已安装的 provider adapter 与 HyperFrames 工具完成。
 
-## 开源边界
+## 开源剪辑工作台
 
-这个仓库开源的是“Agent 如何把文章变成可检查的视频项目”，不是完整商业工作台。
+仓库同时开放完整的 [Kanvis Video Workbench](workbench/README.md)，不是只开放项目协议或展示截图。
 
-开源层包括 Skill、项目契约、示例、校验脚本和发布门禁。付费层可以围绕 Obsidian 工作台、历史项目管理、封面生成、剪映/CapCut 导入包、模板库、课程项目包和定制交付展开。
+![Kanvis Video Workbench：画布、属性面板与多轨时间轴](assets/workbench-preview.png)
 
-参见：
+工作台提供：
 
-- [Kanvis Cut Suite Direction](docs/kanvis-cut-suite.md)
-- [Open Core Boundary](docs/open-core-boundary.md)
-- [Obsidian Workbench Pro](docs/obsidian-workbench-pro.md)
-- [Jianying / CapCut Export Strategy](docs/jianying-capcut-export.md)
+- 可选择、拖动和缩放图层的可视化画布；
+- 支持定位、分割、删除和多轨编辑的时间轴；
+- 文本、位置、尺寸、透明度、时长和特效参数调整；
+- 实时特效预览与成片播放；
+- 独立编辑 revision、撤销与重做；
+- 本地项目存储、预览服务和渲染任务；
+- HyperFrames、Codex 和 MCP 接入。
+
+源码位于 [`workbench/`](workbench/)，使用 MIT 许可证。参见 [Jianying / CapCut Export Strategy](docs/jianying-capcut-export.md) 了解项目导出方向。
 
 ## 安装
 
@@ -234,7 +239,6 @@ npm run check
 需要帮助时，请先看 [SUPPORT.md](SUPPORT.md)。版本变化见 [CHANGELOG.md](CHANGELOG.md)。
 
 发布和社区增长计划见 [LAUNCH_PLAYBOOK.md](LAUNCH_PLAYBOOK.md)。
-连续发布话题见 [docs/release-series.zh-CN.md](docs/release-series.zh-CN.md)。
 后续路线图见 [docs/roadmap.md](docs/roadmap.md)。
 常见问题见 [docs/faq.md](docs/faq.md)。
 

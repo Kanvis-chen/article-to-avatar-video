@@ -25,9 +25,6 @@ const requiredFiles = [
   'docs/kanvis-cut-suite.md',
   'docs/production-modes.md',
   'docs/local-runtime.md',
-  'docs/release-series.zh-CN.md',
-  'docs/open-core-boundary.md',
-  'docs/obsidian-workbench-pro.md',
   'docs/jianying-capcut-export.md',
   'docs/star-growth-plan.md',
   'docs/roadmap.md',
@@ -45,8 +42,20 @@ const requiredFiles = [
   'assets/kanvis-cut-project.schema.json',
   'assets/kanvis-cut.config.example.json',
   'assets/social-preview.svg',
+  'assets/workbench-preview.png',
   'scripts/set-repository-url.mjs',
   'scripts/detect-runtime.mjs',
+  'workbench/README.md',
+  'workbench/LICENSE',
+  'workbench/THIRD_PARTY_NOTICES.md',
+  'workbench/package.json',
+  'workbench/pnpm-lock.yaml',
+  'workbench/packages/ui/src/App.tsx',
+  'workbench/packages/ui/src/components/EditorShell.tsx',
+  'workbench/packages/ui/src/components/ArtifactCanvas.tsx',
+  'workbench/packages/ui/src/components/ArtifactTimeline.tsx',
+  'workbench/packages/server/src/panel-server.ts',
+  'workbench/docs/ADR-001-open-source-workbench.md',
   '.github/workflows/ci.yml',
   '.github/ISSUE_TEMPLATE/bug_report.yml',
   '.github/ISSUE_TEMPLATE/feature_request.yml'
@@ -60,6 +69,10 @@ const textExtensions = new Set([
   '.yaml',
   '.js',
   '.mjs',
+  '.ts',
+  '.tsx',
+  '.css',
+  '.html',
   '.gitignore',
   '.gitattributes'
 ]);
@@ -123,7 +136,7 @@ try {
 const forbiddenPatterns = [
   { name: 'OpenAI-style API key', pattern: /sk-[A-Za-z0-9_-]{20,}/ },
   { name: 'Bearer token', pattern: new RegExp('Bear' + 'er' + String.raw`\s+[A-Za-z0-9._-]{20,}`, 'i') },
-  { name: 'Authorization header', pattern: new RegExp('Author' + 'ization' + String.raw`\s*:\s*[A-Za-z0-9._-]{8,}`, 'i') },
+  { name: 'Authorization header', pattern: new RegExp(String.raw`\b` + 'Author' + 'ization' + String.raw`\s*:\s*[A-Za-z0-9._-]{8,}`, 'i') },
   { name: 'competitor proper name', pattern: new RegExp(['Jin' + 'gyi', 'Rich' + 'ael', 'Rach' + 'el'].join('|'), 'i') },
   { name: 'session cookie file reference', pattern: new RegExp(['session_' + 'cookies', 'cookies' + String.raw`\.json`].join('|'), 'i') }
 ];

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1",
+  "artifactId": "kanvis-e2e",
+  "workflowId": "kanvis-motion-explainer",
+  "mode": "animation",
+  "engine": "hyperframes",
+  "projectDir": ".",
+  "compositionId": "main",
+  "sourceRevision": 1,
+  "editRevision": 10,
+  "status": "rendered",
+  "capabilities": {
+    "preview": true,
+    "render": true,
+    "editableParameters": [
+      {
+        "id": "title",
+        "label": "主标题",
+        "type": "text",
+        "value": "Kanvis 参数化验收 1784129423622",
+        "maxLength": 40
+      },
+      {
+        "id": "captions",
+        "label": "显示字幕",
+        "type": "boolean",
+        "value": true
+      },
+      {
+        "id": "pace",
+        "label": "动画节奏",
+        "type": "number",
+        "value": 1,
+        "min": 0.7,
+        "max": 1.4,
+        "step": 0.1
+      },
+      {
+        "id": "style",
+        "label": "视觉风格",
+        "type": "select",
+        "value": "mint",
+        "options": [
+          {
+            "value": "mint",
+            "label": "薄荷编辑风"
+          },
+          {
+            "value": "mono",
+            "label": "极简黑白"
+          }
+        ]
+      }
+    ]
+  },
+  "editableLayers": [],
+  "outputs": [
+    {
+      "kind": "project",
+      "relativePath": "."
+    },
+    {
+      "kind": "video",
+      "relativePath": "renders/e2e-1.mp4",
+      "mimeType": "video/mp4"
+    },
+    {
+      "kind": "video",
+      "relativePath": "renders/e2e-2.mp4",
+      "mimeType": "video/mp4"
+    },
+    {
+      "kind": "video",
+      "relativePath": "renders/e2e-3.mp4",
+      "mimeType": "video/mp4"
+    }
+  ],
+  "history": [
+    {
+      "id": "edit-5",
+      "kind": "parameter",
+      "parameterId": "title",
+      "before": "让想法，被看见。",
+      "after": "Kanvis 参数化验收 1784110925874",
+      "createdAt": "2026-07-15T10:22:05.874Z"
+    },
+    {
+      "id": "edit-8",
+      "kind": "parameter",
+      "parameterId": "title",
+      "before": "Kanvis 参数化验收 1784110925874",
+      "after": "Kanvis 参数化验收 1784129423622",
+      "createdAt": "2026-07-15T15:30:23.623Z"
+    }
+  ],
+  "redoStack": [],
+  "updatedAt": "2026-07-15T15:30:47.571Z"
+}

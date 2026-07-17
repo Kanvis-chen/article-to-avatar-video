@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "visualhyper": {
+      "title": "VisualHyper Project Tools",
+      "description": "Open and modify project-local VisualHyper video workspaces.",
+      "command": "node",
+      "args": [
+        "./dist/mcp-server.mjs"
+      ],
+      "cwd": "."
+    }
+  }
+}

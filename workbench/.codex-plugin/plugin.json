@@ -1,0 +1,35 @@
+{
+  "name": "visualhyper-codex-panel",
+  "version": "0.1.0+codex.20260716065318",
+  "description": "Local-first Kanvis workspace for applying reusable video Style Skills with HyperFrames.",
+  "author": {
+    "name": "Kanvis Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "video-editor",
+    "hyperframes",
+    "local-first"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kanvis",
+    "shortDescription": "Apply reusable video Style Skills in a local Codex workspace.",
+    "longDescription": "Kanvis provides a project-local workspace for choosing reusable video Style Skills, supplying source material, previewing and adjusting HyperFrames projects, and rendering verified MP4 outputs.",
+    "developerName": "Kanvis Contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Open Kanvis fullscreen inside Codex for this project.",
+      "Use an existing Style Skill in Kanvis to make a video from my material.",
+      "Show the current Kanvis video project status."
+    ],
+    "brandColor": "#22D3B6"
+  }
+}

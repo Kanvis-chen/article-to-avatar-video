@@ -123,7 +123,7 @@ Also verify:
 - `https://github.com/Kanvis-chen/article-to-avatar-video` has been replaced;
 - demo video or GIF is linked, or the README says it is coming soon;
 - `docs/roadmap.md` and `examples/knowledge-video/quality-report.example.json` are present;
-- `docs/open-core-boundary.md` is clear enough to protect the paid workbench and course package;
+- `workbench/README.md` documents how to build and run the open-source visual editor;
 - `LAUNCH_PLAYBOOK.md` still matches the public positioning.
 
 Before the GitHub URL exists, use the local prepublish variant:

@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1",
+  "artifactId": "kanvis-e2e",
+  "workflowId": "kanvis-motion-explainer",
+  "mode": "animation",
+  "engine": "hyperframes",
+  "projectDir": "fixtures/hyperframes/kanvis-e2e",
+  "compositionId": "main",
+  "sourceRevision": 1,
+  "editRevision": 6,
+  "status": "preview-ready",
+  "capabilities": {
+    "preview": true,
+    "render": true,
+    "editableParameters": [
+      {
+        "id": "title",
+        "label": "主标题",
+        "description": "视频开场的核心信息",
+        "type": "text",
+        "value": "Kanvis QA 参数",
+        "maxLength": 40
+      },
+      {
+        "id": "captions",
+        "label": "显示字幕",
+        "type": "boolean",
+        "value": true
+      },
+      {
+        "id": "pace",
+        "label": "动画节奏",
+        "type": "number",
+        "value": 1,
+        "min": 0.7,
+        "max": 1.4,
+        "step": 0.1
+      },
+      {
+        "id": "style",
+        "label": "视觉风格",
+        "type": "select",
+        "value": "mono",
+        "options": [
+          {
+            "value": "mint",
+            "label": "薄荷编辑风"
+          },
+          {
+            "value": "mono",
+            "label": "极简黑白"
+          }
+        ]
+      }
+    ]
+  },
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 360
+  },
+  "editableLayers": [
+    {
+      "id": "hero-title",
+      "name": "主标题",
+      "kind": "text",
+      "text": "把一篇文章，变成可编辑的视频项目",
+      "startFrame": 0,
+      "durationFrames": 150,
+      "x": 110,
+      "y": 310,
+      "width": 860,
+      "height": 300,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "locked": false,
+      "allowedEdits": ["startFrame", "durationFrames", "x", "y", "width", "height", "rotation", "opacity", "visible", "locked", "text"]
+    },
+    {
+      "id": "key-point",
+      "name": "观点卡片",
+      "kind": "motion-graphic",
+      "startFrame": 90,
+      "durationFrames": 180,
+      "x": 130,
+      "y": 760,
+      "width": 820,
+      "height": 420,
+      "rotation": 0,
+      "opacity": 0.92,
+      "visible": true,
+      "locked": false,
+      "allowedEdits": ["startFrame", "durationFrames", "x", "y", "width", "height", "rotation", "opacity", "visible", "locked"]
+    },
+    {
+      "id": "presenter-pip",
+      "name": "数字人 / 真人 PIP",
+      "kind": "video",
+      "mediaStartFrame": 0,
+      "startFrame": 150,
+      "durationFrames": 210,
+      "x": 650,
+      "y": 1180,
+      "width": 330,
+      "height": 560,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "locked": false,
+      "allowedEdits": ["startFrame", "durationFrames", "x", "y", "width", "height", "rotation", "opacity", "visible", "locked"]
+    },
+    {
+      "id": "captions",
+      "name": "重点字幕",
+      "kind": "caption",
+      "text": "内容负责表达，工作台负责调整",
+      "startFrame": 30,
+      "durationFrames": 300,
+      "x": 110,
+      "y": 1640,
+      "width": 860,
+      "height": 150,
+      "rotation": 0,
+      "opacity": 1,
+      "visible": true,
+      "locked": false,
+      "allowedEdits": ["startFrame", "durationFrames", "x", "y", "width", "height", "rotation", "opacity", "visible", "locked", "text"]
+    }
+  ],
+  "outputs": [
+    {
+      "kind": "project",
+      "relativePath": "."
+    },
+    {
+      "kind": "video",
+      "relativePath": "renders/e2e-3.mp4",
+      "mimeType": "video/mp4"
+    }
+  ],
+  "history": [
+    {
+      "id": "edit-1",
+      "parameterId": "style",
+      "before": "mint",
+      "after": "mono",
+      "createdAt": "2026-07-15T08:00:22.982Z"
+    },
+    {
+      "id": "edit-2",
+      "parameterId": "style",
+      "before": "mono",
+      "after": "mint",
+      "createdAt": "2026-07-15T08:03:29.682Z"
+    },
+    {
+      "id": "edit-3",
+      "parameterId": "style",
+      "before": "mint",
+      "after": "mono",
+      "createdAt": "2026-07-15T08:07:13.650Z"
+    },
+    {
+      "id": "edit-6",
+      "parameterId": "title",
+      "before": "让想法，被看见。",
+      "after": "Kanvis QA 参数",
+      "createdAt": "2026-07-15T10:16:24.906Z"
+    }
+  ],
+  "redoStack": [],
+  "updatedAt": "2026-07-15T10:16:24.906Z"
+}

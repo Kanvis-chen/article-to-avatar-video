@@ -1,0 +1,23 @@
+{
+  "name": "@visualhyper/mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "probe": "tsx src/probe.ts",
+    "probe:http": "tsx src/http-probe.ts",
+    "probe:remote": "tsx src/remote-probe.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.4",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@visualhyper/core": "workspace:*",
+    "@visualhyper/server": "workspace:*",
+    "zod": "^4.4.3"
+  }
+}

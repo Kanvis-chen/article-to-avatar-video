@@ -1,0 +1,39 @@
+{
+  "name": "visualhyper-codex-panel",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "build:plugin": "pnpm build && node ./scripts/build-plugin.mjs",
+    "prepare:deps": "pnpm --filter @visualhyper/core build && pnpm --filter @visualhyper/hyperframes-adapter build",
+    "typecheck": "pnpm prepare:deps && pnpm -r --if-present typecheck",
+    "test": "pnpm prepare:deps && pnpm -r --if-present test",
+    "dev": "pnpm --filter @visualhyper/ui dev",
+    "dev:server": "pnpm --filter @visualhyper/server dev",
+    "start": "node ./bin/visualhyper.mjs start --project .",
+    "open": "node ./bin/visualhyper.mjs open --project .",
+    "status": "node ./bin/visualhyper.mjs status --project .",
+    "stop": "node ./bin/visualhyper.mjs stop --project .",
+    "probe:mcp": "pnpm --filter @visualhyper/mcp-server probe",
+    "probe:mcp-http": "pnpm --filter @visualhyper/mcp-server probe:http",
+    "probe:mcp-remote": "pnpm --filter @visualhyper/mcp-server probe:remote",
+    "probe:app-server": "pnpm --filter @visualhyper/codex-client probe",
+    "probe:hyperframes": "pnpm --filter @visualhyper/hyperframes-adapter probe",
+    "app:bridge:start": "node ./scripts/start-app-bridge.mjs --project ..",
+    "app:bridge:stop": "node ./scripts/stop-app-bridge.mjs --project ..",
+    "smoke": "node ./scripts/smoke.mjs",
+    "release:e2e": "pnpm build && node ./scripts/release-e2e.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.4"
+  }
+}

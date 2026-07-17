@@ -6,7 +6,7 @@ English | [中文](README.md)
 
 A Codex Skill that turns Chinese long-form content into a visually directed, release-gated video project across human enhancement, faceless visual, and authorized avatar modes.
 
-Current version: `v0.1.0`
+Current version: `v0.2.0`
 
 ## Why it exists
 
@@ -73,18 +73,15 @@ All modes share the content, scene, effect, cover, QA, and export pipeline. See 
 
 The project remains useful without paid MiniMax or HeyGen calls. See [docs/local-runtime.md](docs/local-runtime.md) for automatic hardware routing and mock fallback.
 
-## Open core boundary
+## Open-source video workbench
 
-This repository open-sources how an Agent turns an article into a checkable video project. It does not open-source the full commercial workbench.
+The repository includes the complete [Kanvis Video Workbench](workbench/README.md), not only a project contract or screenshots.
 
-The open layer includes the Skill, project contracts, examples, validation scripts, and release gates. A paid layer can still include the Obsidian workbench, historical project management, cover generation, Jianying/CapCut import packages, template packs, course project files, and custom implementation.
+![Kanvis Video Workbench with canvas, inspector, and multi-track timeline](assets/workbench-preview.png)
 
-See:
+It provides a visual layer canvas, multi-track timeline, text and effect controls, live preview, rendered playback, split/delete operations, undo/redo revisions, local project storage, render jobs, and Codex/MCP integration.
 
-- [Kanvis Cut Suite Direction](docs/kanvis-cut-suite.md)
-- [Open Core Boundary](docs/open-core-boundary.md)
-- [Obsidian Workbench Pro](docs/obsidian-workbench-pro.md)
-- [Jianying / CapCut Export Strategy](docs/jianying-capcut-export.md)
+The source is under [`workbench/`](workbench/) and is released under MIT. See [Jianying / CapCut Export Strategy](docs/jianying-capcut-export.md) for the export direction.
 
 ## Requirements
 

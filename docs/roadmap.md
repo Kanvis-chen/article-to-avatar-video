@@ -61,14 +61,14 @@ Goal: split only the pieces that have stable examples and repeated demand.
 - Stabilize `effect-director` for scene-level motion and emphasis parameters.
 - Keep `/kanvis-cut` as a router only after at least two subskills have tests and examples.
 
-## v0.7: Workbench Handoff
+## v0.7: Open Workbench
 
-Goal: make the open skill hand off cleanly to paid or third-party editing surfaces without becoming a generic editor.
+Goal: make the open skill hand off cleanly to the included visual workbench and third-party editing surfaces.
 
 - Define a stable export asset package.
 - Add SRT export guidance.
 - Add Jianying/CapCut import-package examples after version testing.
-- Keep commercial workbench, template packs, and draft-package adapters outside the open-source core.
+- Keep engine adapters replaceable and project files portable.
 
 ## v0.5: Release QA Evidence
 
@@ -89,6 +89,4 @@ These are intentionally outside the project scope:
 - scraping or account automation;
 - full-screen avatar generator as the primary product;
 - private portrait, voice, client, or signed-URL examples.
-- paid Obsidian workbench source code;
-- commercial template packs or course project packs;
 - untested Jianying/CapCut draft-package generation.

@@ -54,8 +54,7 @@ Use these names consistently:
 
 - `Article to Avatar Video`: the first open-source skill.
 - `Kanvis Cut Skills`: the future open skill suite.
-- `Kanvis Cut Workbench Pro`: the paid Obsidian/workbench product.
+- `Kanvis Video Workbench`: the open-source visual editing workbench.
 - `Kanvis Business Skills`: the future higher-level business skill ecosystem.
 
 This keeps the public project from trapping the creator in a narrow "video tool" identity. The video skill is one production module inside a larger business system.
-

@@ -84,21 +84,9 @@ See `docs/good-first-issues.md`.
 - real voice samples or portraits;
 - provider secrets or signed URLs.
 
-## Will open-sourcing this hurt paid courses or services?
+## Is the visual editor open source?
 
-It should not, as long as the boundary stays clear.
-
-The open-source repository shows the method, project contracts, examples, and checks. A paid course or service can still sell:
-
-- Obsidian workbench setup;
-- project packs and templates;
-- cover generation workflows;
-- Jianying/CapCut handoff packages;
-- custom business workflows;
-- content library integration;
-- implementation, review, and delivery accountability.
-
-Open source earns trust. Paid products sell speed, certainty, and results.
+Yes. The complete Kanvis Video Workbench source is included under `workbench/` with an MIT license. It includes the canvas, timeline, layer inspector, preview, project service, render jobs, and Codex/MCP integration.
 
 ## Is this the future Kanvis Cut Skills suite?
 
