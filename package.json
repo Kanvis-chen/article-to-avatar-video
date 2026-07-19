@@ -4,7 +4,7 @@
   "description": "Kanvis Video turns long-form content into directed video projects and hands finished work to Kanvis Studio.",
   "type": "module",
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/docs.test.mjs tests/scripts.test.mjs",
     "check": "npm test && node scripts/validate-skill.mjs && node scripts/preflight.mjs --article examples/knowledge-video/article.md --config examples/knowledge-video/kanvis-video.config.json && node scripts/detect-runtime.mjs --config examples/knowledge-video/kanvis-video.config.json && node scripts/validate-scene-plan.mjs examples/knowledge-video/scene-plan.json",
     "runtime:detect": "node scripts/detect-runtime.mjs",
     "release:audit": "node scripts/release-audit.mjs",

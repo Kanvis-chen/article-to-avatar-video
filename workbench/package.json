@@ -10,7 +10,7 @@
   "scripts": {
     "build": "pnpm -r --if-present build",
     "build:plugin": "pnpm build && node ./scripts/build-plugin.mjs",
-    "prepare:deps": "pnpm --filter @visualhyper/core build && pnpm --filter @visualhyper/hyperframes-adapter build",
+    "prepare:deps": "pnpm --filter @visualhyper/core build && pnpm --filter @visualhyper/hyperframes-adapter build && pnpm --filter @visualhyper/server build",
     "typecheck": "pnpm prepare:deps && pnpm -r --if-present typecheck",
     "test": "pnpm prepare:deps && pnpm -r --if-present test",
     "dev": "pnpm --filter @visualhyper/ui dev",
