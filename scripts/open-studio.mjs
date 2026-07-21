@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/**
+ * Kanvis Video - Open Studio Script
+ * Copyright (c) 2026 Kanvis Chen
+ * MIT License - https://opensource.org/licenses/MIT
+ */
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -104,4 +109,21 @@ const opened = spawnSync(process.execPath, args, {
   windowsHide: true
 });
 if (opened.error) throw opened.error;
-process.exit(opened.status ?? 1);
+const exitCode = opened.status ?? 1;
+if (exitCode === 0) {
+  // 在 JSON 输出之后追加一段人类可读的中文提示，便于 AI 直接转发给最终用户。
+  // visualhyper.mjs open 会在 stdout 打印 JSON（包含 url 字段），这里补充友好文案。
+  const projectDirDisplay = projectDir;
+  const videoDisplay = fs.existsSync(videoFile) ? videoFile : path.join(projectDir, 'output', 'video.mp4');
+  console.log('');
+  console.log('🎬 Kanvis Studio 已打开');
+  console.log(`├── 项目目录: ${projectDirDisplay}`);
+  console.log(`└── 视频文件: ${videoDisplay}`);
+  console.log('');
+  console.log('工作台已在默认浏览器中自动打开。如果浏览器没有弹出，可执行：');
+  console.log(`  node ${path.join(repositoryRoot, 'workbench', 'bin', 'visualhyper.mjs')} status --project "${projectDirDisplay}"`);
+  console.log('查看当前工作台 URL，然后手动在浏览器中打开。');
+  console.log('');
+  console.log('在工作台中可以：预览视频 · 切片剪辑 · 字幕微调 · 重新导出。');
+}
+process.exit(exitCode);

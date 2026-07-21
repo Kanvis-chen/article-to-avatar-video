@@ -1,6 +1,8 @@
 # Kanvis Video
 
-[English](README.en.md) | 中文
+[English](README.en.md) | 中文 | [官网](https://kanvis-chen.github.io/kanvis-homepage/) | [开放生态](https://kanvis-chen.github.io/kanvis-homepage/open/?tab=skill)
+
+> 文章不是拿来逐字朗读的，而是拿来重新导演的。
 
 > 文章不是拿来逐字朗读的，而是拿来重新导演的。
 
@@ -19,6 +21,8 @@ Kanvis Video 是 Kanvis System 中开源的视频制作能力层：用 Codex Ski
 | **Kanvis Video** | 本开源仓库：视频 Skill、项目协议、质检与 Studio 交接 |
 | **Kanvis Article to Video** | 当前首个 Skill，调用名 `$kanvis-article-to-video` |
 | **Kanvis Studio** | 本地视频工作台，负责画布、时间轴、检查、微调、渲染与后续工程导出 |
+
+> 完整介绍见 [Kanvis 官网](https://kanvis-chen.github.io/kanvis-homepage/)。
 
 `Kanvis Cut` 不再作为产品名。它容易被理解成单纯裁剪工具，而 Studio 实际覆盖完整的视频项目工作区。
 
@@ -278,6 +282,30 @@ npm run check
 - [ ] 更多平台预设、字幕样式和中文发音词典
 - [ ] 拆出 `cover-director`、`subtitle-director`、`effect-director` 的稳定示例
 - [ ] 生成稳定的剪映/CapCut 导入资产包
+
+## 了解更多
+
+- [Kanvis 官网](https://kanvis-chen.github.io/kanvis-homepage/) — 系统介绍、课程与服务
+- [开放 Skill 生态](https://kanvis-chen.github.io/kanvis-homepage/open/?tab=skill) — 官方与社区 Skill 目录
+- [Kanvis Studio 工作台](https://kanvis-chen.github.io/kanvis-homepage/open/?tab=workbench) — 本地视频编辑与渲染工具
+
+## Brand Usage Policy
+
+The "Kanvis" name, "Kanvis Video", "Kanvis Studio" and the Kanvis logo are trademarks of Kanvis Chen. You may not use them in your own products or services without explicit written permission.
+
+### Permitted Uses
+- Referencing Kanvis Video in documentation, articles, or educational content
+- Using Kanvis Video as a dependency in your own projects
+- Forking and modifying the code for personal or commercial use, as long as the fork is not marketed as "Kanvis"
+
+### Prohibited Uses
+- Using the "Kanvis" name or logo in your own product name, domain, or branding
+- Creating derivative products or services that could be confused with official Kanvis products
+- Using Kanvis trademarks in advertising, marketing, or course material without permission
+- Removing or obscuring copyright notices or attribution from the source code
+
+### Attribution Requirement
+All copies, forks, or distributions of this software must retain the copyright notice and license header in the source files. See [LICENSE](LICENSE) for the full MIT license text.
 
 ## License
 

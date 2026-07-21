@@ -1,3 +1,8 @@
+/**
+ * Kanvis Video - Runtime Library
+ * Copyright (c) 2026 Kanvis Chen
+ * MIT License - https://opensource.org/licenses/MIT
+ */
 import os from 'node:os';
 import { spawnSync } from 'node:child_process';
 

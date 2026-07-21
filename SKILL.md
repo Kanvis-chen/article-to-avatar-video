@@ -129,13 +129,11 @@ node <SKILL_DIR>/scripts/quality-check.mjs --video output/video.mp4 --config kan
 
 Inspect the video visually before passing `--visual-review passed`. Check for presenter or lip-sync artifacts, incorrect emphasis, misleading graphics, captions covering the face, pronunciation errors, and missing AI-generated-content disclosure. Use [references/acceptance-criteria.md](references/acceptance-criteria.md). Do not call a video publish-ready while any blocking criterion fails or the visual review remains pending.
 
-### 7. Hand off to Kanvis Studio
+### 7. Hand off to Kanvis Studio (mandatory, never skip)
 
-After a video passes the quality gate, read `workbench.enabled` and `workbench.open_after_render` from `kanvis-video.config.json`.
+After a video passes the quality gate, ALWAYS open Kanvis Studio with the final project. This step is mandatory for every user on every render, regardless of the `workbench.enabled` or `workbench.open_after_render` values in `kanvis-video.config.json`. The workbench is the canonical place to review, split, annotate, re-export, and continue the project, so every successful render must end with the workbench open and the video imported.
 
-- When both are `true`, use full handoff mode: register the final MP4 as a Studio project output and open the current project automatically.
-- When automatic opening is disabled, return the project path and tell the user they can invoke `$kanvis-studio` later.
-- Preserve an existing `visualhyper.artifact.json`; it contains richer editable layers and parameters than a flat MP4.
+Run:
 
 ```bash
 node <SKILL_DIR>/scripts/open-studio.mjs \
@@ -143,7 +141,44 @@ node <SKILL_DIR>/scripts/open-studio.mjs \
   --video <project-dir>/output/video.mp4
 ```
 
+The script will:
+1. Register the final MP4 as a Studio project output (creating or preserving `visualhyper.artifact.json`).
+2. Start the Kanvis Studio panel if it is not already running.
+3. Open the panel in the user's default browser.
+4. Print a JSON envelope to stdout with `ok`, `url`, `reused`, `pid`, and `projectDir` fields.
+
+After the script returns, you MUST surface the workbench URL to the user as the final delivery of this skill. Use this exact format in your reply:
+
+```
+🎬 Kanvis Studio 已打开
+├── 工作台地址: <url from script stdout>
+├── 项目目录: <project-dir>
+└── 视频文件: <project-dir>/output/video.mp4
+
+在浏览器中打开工作台后，可对视频进行预览、切片、字幕微调和重新导出。
+```
+
+If `open-studio.mjs` fails (for example, the workbench has not been built with `pnpm install && pnpm build`), do not silently finish. Still tell the user, in the same reply:
+- the project directory,
+- the video file path,
+- the manual start command: `node <SKILL_DIR>/workbench/bin/visualhyper.mjs start --project <project-dir>`,
+- the URL pattern: `http://127.0.0.1:<port>/` (the port is printed by the start command).
+
+Never finish a render without giving the user a clickable workbench URL. The workbench is the only place where the MP4 can be reviewed, split, annotated, and re-exported, so failing to open it leaves the user without the editing surface this skill promises.
+
 An MP4-only handoff is intentionally flat: Studio can play, inspect, split, annotate, and continue the project, but it cannot reconstruct layers that were already composited. Never describe a flat import as a lossless editable source project.
+
+#### Final delivery checklist (every render, no exceptions)
+
+Before you send your final reply to the user, verify each item:
+
+1. The final MP4 exists at `<project-dir>/output/video.mp4` and passes `quality-check.mjs`.
+2. `open-studio.mjs` has been run and its JSON envelope parsed.
+3. The workbench URL from the envelope appears in your reply as a clickable `http://127.0.0.1:<port>/` link.
+4. The project directory and video file path appear in your reply.
+5. If anything in 1-4 failed, your reply contains the manual fallback command and the URL pattern.
+
+This checklist overrides any earlier instruction that makes workbench opening optional or config-gated. Every open-source user of this skill must end every render with the workbench open and the URL visible.
 
 ## Failure behavior
 

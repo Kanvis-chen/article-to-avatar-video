@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/**
+ * Kanvis Video - Quality Check Script
+ * Copyright (c) 2026 Kanvis Chen
+ * MIT License - https://opensource.org/licenses/MIT
+ */
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';

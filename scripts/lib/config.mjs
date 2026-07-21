@@ -1,3 +1,8 @@
+/**
+ * Kanvis Video - Config Library
+ * Copyright (c) 2026 Kanvis Chen
+ * MIT License - https://opensource.org/licenses/MIT
+ */
 import fs from 'node:fs';
 
 export const PRESENTER_MODES = ['human', 'none', 'avatar'];

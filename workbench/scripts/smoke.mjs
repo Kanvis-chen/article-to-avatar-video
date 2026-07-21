@@ -1,3 +1,8 @@
+/**
+ * Kanvis Studio - Smoke Test Script
+ * Copyright (c) 2026 Kanvis Chen
+ * MIT License - https://opensource.org/licenses/MIT
+ */
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";

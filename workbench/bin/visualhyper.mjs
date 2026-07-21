@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/**
+ * Kanvis Studio - Workbench CLI
+ * Copyright (c) 2026 Kanvis Chen
+ * MIT License - https://opensource.org/licenses/MIT
+ */
 
 import { spawn } from "node:child_process";
 import { access } from "node:fs/promises";

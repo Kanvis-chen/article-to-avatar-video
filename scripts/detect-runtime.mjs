@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/**
+ * Kanvis Video - Runtime Detection Script
+ * Copyright (c) 2026 Kanvis Chen
+ * MIT License - https://opensource.org/licenses/MIT
+ */
 import { readJson, validateConfig } from './lib/config.mjs';
 import { detectHardware, recommendRuntime } from './lib/runtime.mjs';
 
